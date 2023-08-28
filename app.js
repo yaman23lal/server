@@ -45,7 +45,7 @@ app.set("views", "./views");
 
 
 app.route("/").get((req,res)=>{
-	res.render("Home");
+	res.render("home");
 })
 
 // app.route("/admin").get(AdminControl.getAdmin)
