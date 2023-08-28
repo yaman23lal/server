@@ -39,7 +39,7 @@ app.use(session({
 	cookie: { secure: false }
 
 }))
-
+//hello
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
