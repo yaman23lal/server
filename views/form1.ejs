@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <title>Sewa Form </title>
+</head>
+
+<body>
+    <div class="container">
+        <header>सेवा फार्म</header>
+
+        <form method="post" action="/form" class="secActive" onsubmit="return checkForm()">
+            <!-- <div class="form first"> -->
+            <div class="details personal hed">
+                <span class="title">Personal Details</span>
+
+                <div class="fields">
+                    <div class="input-field" id="mobile">
+                        <label for="number">मोबाइल नंबर</label>
+                        <input type="tel" name="Mobnumber" id="number" oninput="getM(this)"
+                            placeholder="Enter mobile number" maxlength="10" required>
+
+                    </div>
+                    <div class="input-field">
+                        <label for="fullname">आपका नाम</label>
+                        <input type="text" name="Name" id="fullname" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="District">जिला</label>
+                        <input type="text" name="Dist" id="District" placeholder="Enter District" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="Block">ब्लॉक</label>
+                        <input type="text" name="Block" id="Block" placeholder="Enter your Block" required>
+                    </div>
+
+
+
+                    <div class="input-field">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option disabled selected>Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="Group">आप किस ग्रुप के सदस्य हैं ?</label>
+                        <input type="text" name="Group" id="Group" placeholder="Enter your Group" required>
+                    </div>
+                    <div class="input-field" id="team" style="display: none;">
+                        <label for="Team">आप कौन से टीम के सदस्य हैं ?</label>
+                        <input type="text" name="Team" id="Team" placeholder="Enter your Team">
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="details ID " id="sewaDiv">
+                <span class="title" id="platform">किस किस प्लेटफॉर्म में सेवा किए ?</span>
+
+                <div class="fields" id="sewaplatform">
+                    <div class="details">
+                        <input type="checkbox" name="FacebookSewa" id="fb" onclick="myFunction(this)" value=true>
+                        <label for="fb">फेसबुक सेवा</label>
+
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="InstagramSewa" id="insta" onclick="myFunction(this)" value=true>
+                        <label for="insta">इंस्टाग्राम सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="TwitterSewa" id="twitter" onclick="myFunction(this)"
+                            value=true>
+                        <label for="twitter">Twitter सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="DailyhuntSewa" id="DailyHunt" onclick="myFunction(this)"
+                            value=true>
+                        <label for="DailyHunt">डेलीहंट सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="YouTubeSewa" id="YouTube" onclick="myFunction(this)"
+                            value=true>
+                        <label for="YouTube">यूट्यूब सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="PintrestSewa" id="Pintrest" onclick="myFunction(this)"
+                            value=true>
+                        <label for="Pintrest">पिंटरेस्ट सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="ReditSewa" id="Redit" onclick="myFunction(this)" value=true>
+                        <label for="Redit">रेडिट सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="ShareChatSewa" id="Sharechat" onclick="myFunction(this)"
+                            value=true>
+                        <label for="Sharechat">शेयरचैट सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="KooSewa" id="Koo" onclick="myFunction(this)" value=true>
+                        <label for="Koo">Koo सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="WhatsappSewa" id="Whatsapp" value=1>
+                        <label for="Whatsapp">व्हाट्सप्प स्टेटस सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="NoSewa" id="nosewa" value=true>
+                        <label for="nosewa">आज कोई सेवा नहीं कर पाए</label>
+                    </div>
+
+
+                </div>
+
+                <div class="input-field" id="massagesewa">
+
+                </div>
+
+            </div>
+            <!-- <hr> -->
+
+            <div class="details address ">
+
+                <div class="sewadetails" id="fb1">
+                    <!-- <span class="title">Facebook Sewa</span> -->
+
+                    <div class="input-field">
+                        <label>फेसबुक में पोस्ट सेवा</label>
+                        <input type="tel" name="fbpost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+                    <div class="input-field">
+                        <label>फेसबुक में स्टोरी सेवा</label>
+                        <input type="tel" name="fbstory" placeholder="स्टोरी" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>फेसबुक में कॉमेंट सेवा</label>
+                        <input type="tel" name="fbcomment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="insta1">
+                    <div class="input-field">
+                        <label>इंस्टाग्राम में पोस्ट सेवा</label>
+                        <input type="tel" name="instapost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+                    <div class="input-field">
+                        <label>इंस्टाग्राम में स्टोरी सेवा</label>
+                        <input type="tel" name="instastory" placeholder="स्टोरी" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>इंस्टाग्राम में कॉमेंट सेवा</label>
+                        <input type="tel" name="instacomment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="twitter1">
+                    <div class="input-field">
+                        <label>Twitter में Tweets सेवा</label>
+                        <input type="tel" name="tTweet" placeholder="tweets" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Twitter में रिप्लाई सेवा</label>
+                        <input type="tel" name="tReply" placeholder="रिप्लाई" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="DailyHunt1">
+                    <div class="input-field">
+                        <label>डेलीहंट में पोस्ट सेवा</label>
+                        <input type="tel" name="Dailyhuntpost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>डेलीहंट में कॉमेंट सेवा</label>
+                        <input type="tel" name="Dailyhuntcomment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="YouTube1">
+                    <div class="input-field">
+                        <label>यूट्यूब में वीडियो वायरल सेवा</label>
+                        <input type="tel" name="YTvviral" placeholder="वीडियो वायरल" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>यूट्यूब में कॉमेंट सेवा</label>
+                        <input type="tel" name="YTcomment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="Pintrest1">
+                    <div class="input-field">
+                        <label>पिंटरेस्ट में पिन सेवा</label>
+                        <input type="tel" name="pPin" placeholder="पिन" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>पिंटरेस्ट में रिपिन सेवा</label>
+                        <input type="tel" name="pRipin" placeholder="रिपिन" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="Koo1">
+                    <div class="input-field">
+                        <label>कू में पोस्ट सेवा</label>
+                        <input type="tel" name="kooPost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>कू में रिप्लाई सेवा</label>
+                        <input type="tel" name="kooReply" placeholder="रिप्लाई" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="Sharechat1">
+                    <div class="input-field">
+                        <label>शेयरचैट में पोस्ट सेवा</label>
+                        <input type="tel" name="sharechatPost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>शेयरचैट में कॉमेंट सेवा</label>
+                        <input type="tel" name="sharechatComment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="Redit1">
+                    <div class="input-field">
+                        <label>रेडिट में पोस्ट सेवा </label>
+                        <input type="tel" name="reditPost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>रेडिट में कॉमेंट सेवा </label>
+                        <input type="tel" name="reditComment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+            </div>
+            <div class="details" id="bookSewaDiv" style="display: none;">
+                <hr>
+                <span class="title" id="platform">क्या आज आपने बुक सेवा किये ?</span>
+
+                <div class="fields" id="bookdivYN">
+                    <div class="details">
+                        <input type="radio" name="BookSewa" id="BY" onclick="bookSewa(this)" value="true">
+                        <label for="BY">हाँ</label><br>
+                        <input type="radio" name="BookSewa" id="BN" onclick="bookSewa(this)" value="false">
+                        <label for="BN">नहीं</label><br>
+
+                    </div>
+                </div>
+            </div>
+            <div id="bookSewaMessage" style="display: none;">
+                <span class="title" id="platform">आज आप बुक सेवा फॉर्म डालने  के लिए लेट हो गए, कृपया 9 बजे के पहले फॉर्म डालें |</span>
+            </div>
+
+            <div class="details address " id="bmain">
+                <hr>
+                <span class="title">बुक सेवा की जानकारी</span>
+
+                <div class="fields" id="booksewa">
+
+                    <div class="input-field">
+                        <label>बुक आर्डर इवेंट</label>
+                        <input type="tel" name="fbBookevent" placeholder="इवेंट" maxlength="2">
+                    </div>
+                    <div class="input-field">
+                        <label>बुक आर्डर पोस्ट</label>
+                        <input type="tel" name="fbBookpost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>भारतीय आर्डर</label>
+                        <input type="tel" name="Nationalbook" placeholder="भारतीय आर्डर" maxlength="3">
+                    </div>
+                    <div class="input-field">
+                        <label>इंटरनेशनल आर्डर</label>
+                        <input type="tel" name="InterNationalbook" placeholder="इंटरनेशनल आर्डर" maxlength="3">
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+
+            <div class="details Satasangshare" id="satsangDiv">
+                <span class="title">लाइव सत्संग सेवा</span>
+                <div style="margin-bottom: 4px;" class="input-field">
+                    <label>आपने जिस समय <b>लाइव सत्संग</b> शेयर करने की सेवा की है ,उन समयों पर Tick लगाएं | रोज कम
+                        से कम <b>दो समय</b> यह सेवा करना <b>अनिवार्य</b> हैं जी |
+                    </label>
+
+                </div>
+
+                <div class="fields" id="satsangplt">
+
+                    <div class="details">
+                        <input type="checkbox" name="jantantra" id="jantantra" value="1">
+                        <label for="jantantra">सुबह 5:00 बजे (जन-तंत्र टीवी)</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="ishwar" id="ishwar" value="1">
+                        <label for="ishwar">सुबह 6:00 बजे (ईश्वर टीवी)</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="sudarshan" id="sudarshan" value="1">
+                        <label for="sudarshan">सुबह 6:00 बजे (सुदर्शन न्यूज़)</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="nepal" id="nepal" value="1">
+                        <label for="nepal">सुबह 6:00 बजे (नेपाल1 टीवी)</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="shradha" id="shradha" value="1">
+                        <label for="shradha">दोपहर 2:00 बजे (श्रद्धा टीवी)</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="sadhna" id="sadhna" value="1">
+                        <label for="sadhna">शाम 7:00 बजे (साधना /पॉपकॉर्न टीवी)</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="subharti" id="subharti" value="1">
+                        <label for="subharti">रात 8:00 बजे (सुभारती टीवी)</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="c10" id="c10" value="1">
+                        <label for="c10">रात 8:30 बजे (सी10 न्यूज़)</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="NoShare" id="no" value="1">
+                        <label for="no">आज यह सेवा नहीं कर पाएं |</label>
+                    </div>
+                </div>
+                <div class="input-field" id="massagesatsang">
+
+                </div>
+
+            </div>
+            <div class="details ID " id="deptSewaDiv" style="display: none;">
+                <hr>
+                <span class="title" id="platform">क्या आज आपने डिपार्टमेंट सेवा किये ?</span>
+
+                <div class="fields" id="bookdivYN">
+                    <div class="details">
+                        <input type="radio" name="DeptSewa" id="DY" onclick="deptSewa(this)" value="true">
+                        <label for="DY">हाँ</label><br>
+                        <input type="radio" name="DeptSewa" id="DN" onclick="deptSewa(this)" value="false">
+                        <label for="DN">नहीं</label><br>
+
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="dept" id="dmain">
+                <hr>
+                <span class="title">डिपार्टमेंट सेवा</span>
+
+                <div class="fields" id="deptsewa">
+
+                    <div class="details">
+                        <input type="checkbox" id="fbDept" onclick="myFunction(this)" value="fbdept">
+                        <label for="fbDept">फेसबुक डिपार्टमेंट सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" id="instaDept" onclick="myFunction(this)" value="instadept">
+                        <label for="instaDept">इंस्टाग्राम डिपार्टमेंट सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" id="twitterDept" onclick="myFunction(this)" value="twitterdept">
+                        <label for="twitterDept">Twitter डिपार्टमेंट सेवा</label>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" id="YouTubeDept" onclick="myFunction(this)" value="youtubedept">
+                        <label for="YouTubeDept">यूट्यूब डिपार्टमेंट सेवा</label>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="details departmensewa " id="dsewa">
+                <!-- <span class="title">डिपार्टमेंट सेवा जानकारी </span> -->
+
+                <div class="sewadetails" id="fbDept1">
+                    <div class="input-field">
+                        <label>फेसबुक डिपार्टमेंट पोस्ट सेवा</label>
+                        <input type="tel" name="fbdpost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+                    <div class="input-field">
+                        <label>फेसबुक डिपार्टमेंट स्टोरी सेवा</label>
+                        <input type="tel" name="fbdstory" placeholder="स्टोरी" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>फेसबुक डिपार्टमेंट कॉमेंट सेवा</label>
+                        <input type="tel" name="fbdcomment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="instaDept1">
+                    <div class="input-field">
+                        <label>इंस्टाग्राम डिपार्टमेंट पोस्ट सेवा</label>
+                        <input type="tel" name="instadpost" placeholder="पोस्ट" maxlength="2">
+                    </div>
+                    <div class="input-field">
+                        <label>इंस्टाग्राम डिपार्टमेंट स्टोरी सेवा</label>
+                        <input type="tel" name="instadstory" placeholder="स्टोरी" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>इंस्टाग्राम डिपार्टमेंट कॉमेंट सेवा</label>
+                        <input type="tel" name="instadcomment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="twitterDept1">
+                    <div class="input-field">
+                        <label>Twitter डिपार्टमेंट Tweets सेवा</label>
+                        <input type="tel" name="tdtweet" placeholder="tweets" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Twitter डिपार्टमेंट रिप्लाई सेवा</label>
+                        <input type="tel" name="tdreply" placeholder="Reply" maxlength="2">
+                    </div>
+                </div>
+                <div class="sewadetails" id="YouTubeDept1">
+                    <div class="input-field">
+                        <label>यूट्यूब डिपार्टमेंट वीडियो वायरल सेवा</label>
+                        <input type="tel" name="ytdviral" placeholder="वायरल सेवा" maxlength="2">
+                    </div>
+
+                    <div class="input-field">
+                        <label>यूट्यूब डिपार्टमेंट कॉमेंट सेवा</label>
+                        <input type="tel" name="ytdcomment" placeholder="कॉमेंट" maxlength="2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="details Satsang">
+                <hr>
+                <span class="title">क्या आपने आज <b>सत्संग</b> सुना ?</span>
+
+                <div class="fields">
+                    <div class="details">
+                        <input type="radio" id="yes" name="Satsang" value=1 required>
+                        <label for="yes">हाँ</label><br>
+                        <input type="radio" id="No" name="Satsang" value=0 required>
+                        <label for="No">नहीं</label><br>
+                    </div>
+
+
+                </div>
+            </div>
+            <hr>
+            <div class="details bookreading">
+                <span class="title">परमात्मा की लिखी कौनसी <b>किताब</b> कितने <b>पृष्ठ</b> पढ़े ?</span>
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label>(उदाहरण - जीने की राह ,15)</label>
+                        <input type="text" name="book" placeholder="किताब का नाम और पृष्ठ संख्या" required>
+                    </div>
+
+                </div>
+            </div>
+            <div class="details bookreading">
+                <span class="title"><b>अन्य</b> सेवाएं</span>
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label>जिस प्लेटफार्म में सेवा किये उनकी जानकारी</label>
+                        <input type="text" name="other" placeholder="सेवा प्लेटफार्म">
+                    </div>
+
+                </div>
+            </div>
+            <div class="buttons">
+
+                <button class="sumbit">
+                    <span class="btnText">Submit</span>
+                </button>
+            </div>
+    </div>
+    </div>
+    <!-- </div> -->
+
+    </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="/js/form1.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sewa Detail</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/css/single.css">
+
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - material icon link
+  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    
+    <div class="container">
+
+      
+      <h1 class="logo">
+        Sewa Report
+      </h1>
+
+      <button class="menu-toggle-btn icon-box" id="backButton" >
+        <span class="material-symbols-rounded  icon"><span class="material-symbols-outlined">
+          arrow_circle_left
+          </span> 
+      </button>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article class="container article">
+
+      <h2 class="h2 article-title hindi" >जिला - <%= User.Dist %></h2>
+
+      <p class="article-subtitle hindi" >ब्लॉक - <%= User.Block %></p>
+
+      <!-- 
+        - #HOME
+      -->
+
+      <section class="home">
+
+        <div class="card profile-card">
+
+
+
+          <div class="profile-card-wrapper">
+
+        
+
+            <div>
+              <p class="card-title hindi"><%= User.Name %></p>
+
+              <p class="card-subtitle hindi"><%= User.Group %> मेंबर</p>
+              <% if(User.Team) {%>
+              <p class="card-subtitle "><%= User.Team %></p>
+              <%}%>
+              <!-- <p class="card-subtitle hindi"><%= User.Areasewadar %></p> -->
+
+            </div>
+
+          </div>
+
+          <ul class="contact-list">
+
+            <li>
+              <span  class="contact-link icon-box">
+                <span class="material-symbols-rounded  icon">call</span>
+
+                <p class="text"><%= User.Mobile %></p>
+              </span>
+            </li>
+
+          </ul>
+
+          <div class="divider card-divider"></div>
+
+          <ul class="progress-list">
+
+            <li class="progress-item">
+
+              <div class="progress-label">
+                <p class="progress-title">Project Completion</p>
+
+                <data class="progress-data" value="20">20%</data>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress" style="--width: 20%; --bg: var(--blue-ryb);"></div>
+              </div>
+
+            </li>
+
+            <li class="progress-item">
+
+              <div class="progress-label">
+                <p class="progress-title">Overall Rating</p>
+
+                <data class="progress-data" value="7.5">7.5</data>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress" style="--width: 75%; --bg: var(--coral);"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="card-wrapper">
+
+          <div class="card task-card">
+
+            <div class="card-icon icon-box green">
+              <span class="material-symbols-rounded  icon">task_alt</span>
+            </div>
+
+            <div>
+              <data class="card-data" value="21">21</data>
+
+              <p class="card-text">Social Media Sewa Rank</p>
+            </div>
+
+          </div>
+          <div class="card task-card">
+
+            <div class="card-icon icon-box green">
+              <span class="material-symbols-rounded  icon">task_alt</span>
+            </div>
+
+            <div>
+              <data class="card-data" value="100">100</data>
+
+              <p class="card-text">Book Order Sewa Rank</p>
+            </div>
+
+          </div>
+
+
+        </div>
+        
+         <%if(User.Booksewa) {%>   
+        <div class="card revenue-card">
+
+          <p class="card-title">Book Order Sewa Detail</p>
+
+          <data class="card-price" value="150"> Total Orders - <%= User.TotalBookOrder%></data>
+
+          <p class="card-text">National <%= User.NationalOrder %> </p>
+          <p class="card-text">International <%= User.InterNationalOrder %> </p>
+
+          <div class="divider card-divider"></div>
+
+          <ul class="revenue-list">
+
+            <li class="revenue-item icon-box">
+
+              <span class="material-symbols-rounded  icon  green">trending_up</span>
+
+              <div>
+                <data class="revenue-item-data" value="15"> <%= User.BookEvent%> </data>
+
+                <p class="revenue-item-text">Total Event</p>
+              </div>
+
+            </li>
+
+            <li class="revenue-item icon-box">
+
+              <span class="material-symbols-rounded  icon  red">trending_down</span>
+
+              <div>
+                <data class="revenue-item-data" value="10"><%= User.BookPost%></data>
+
+                <p class="revenue-item-text">Total Post</p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+        <%}%>
+
+      </section>
+
+
+
+
+      <!-- 
+        - #PROJECTS
+      -->
+
+      <section class="projects">
+
+        <div class="section-title-wrapper">
+          
+            <h2 class="section-title">Social Media Sewa</h2>
+  
+         
+        </div>
+
+        <ul class="project-list">
+
+          <% if(User.Nosewa) {%>  
+          <li class="project-item">
+            <div class="card project-card">   
+              <h3 class="card-title " >
+                कोई सेवा नहीं किये
+              </h3>                              
+            </div>
+          </li>
+          <% }  else {%>
+            <% if(User.FacebookSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Facebook Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Post - <%= User.Facebook.fPost %>
+                    </p>
+                    <p class="card-text">
+                        Storie - <%= User.Facebook.fStory %>
+                    </p>
+                    <p class="card-text">
+                        Comments - <%= User.Facebook.fComment %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.Facebook.fPost + User.Facebook.fStory + User.Facebook.fComment %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.InstagramSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Instagram Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Post - <%= User.Instagram.iPost %>
+                    </p>
+                    <p class="card-text">
+                        Storie - <%= User.Instagram.iStory %>
+                    </p>
+                    <p class="card-text">
+                        Comments - <%= User.Instagram.iComment %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.Instagram.iPost + User.Instagram.iStory + User.Instagram.iComment %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.TwitterSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Twitter Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Tweet - <%= User.Twitter.tTweet %>
+                    </p>
+                    <p class="card-text">
+                        Reply - <%= User.Twitter.tReply %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.Twitter.tTweet + User.Twitter.tReply  %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.YoutubeSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        YouTube Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Video Viral  - <%= User.Youtube.yVideoViral %>
+                    </p>
+                    <p class="card-text">
+                        Comments - <%= User.Youtube.yComment %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.Youtube.yVideoViral + User.Youtube.yComment  %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.PintrestSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Pintrest Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Pin - <%= User.Pintrest.Pin %>
+                    </p>
+                    <p class="card-text">
+                        Ripin - <%= User.Pintrest.Ripin %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.Pintrest.Pin + User.Pintrest.Ripin  %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.ShareChatSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        ShareChat Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Pin - <%= User.ShareChat.sPost %>
+                    </p>
+                    <p class="card-text">
+                        Ripin - <%= User.ShareChat.sComment %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.ShareChat.sPost + User.ShareChat.sComment  %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.DailyhuntSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Dailyhunt Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Pin - <%= User.Dailyhunt.dPost %>
+                    </p>
+                    <p class="card-text">
+                        Ripin - <%= User.Dailyhunt.dComment %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.Dailyhunt.dPost + User.Dailyhunt.dComment  %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.KooSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Koo Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Pin - <%= User.Koo.kPost %>
+                    </p>
+                    <p class="card-text">
+                        Ripin - <%= User.Koo.kComment %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.Koo.kPost + User.Koo.kComment  %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.ReditSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Redit Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Pin - <%= User.Redit.rPost %>
+                    </p>
+                    <p class="card-text">
+                        Ripin - <%= User.Redit.rComment %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.Redit.rPost + User.Redit.rComment  %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+            <% if(User.WhatsappSewa) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Whatsapp Status Sewa
+                    </h3>             
+                                     
+                  </div>
+                </li>
+          <%}%>
+
+        <%}%>
+
+        </ul>
+
+      </section>
+
+      <%if(User.DepartmentSewa) {%>
+      <section class="projects">
+
+        <div class="section-title-wrapper">
+          
+            <h2 class="section-title">Department Sewa</h2>
+  
+         
+        </div>
+
+        <ul class="project-list">
+                <% if(User.YoutubeD.iS) {%>
+                    <li class="project-item">
+                        <div class="card project-card">   
+                        <h3 class="card-title " >
+                            YouTube Department Sewa
+                        </h3>             
+                        <p class="card-text">
+                            Video Viral  - <%= User.YoutubeD.yDVideoViral %>
+                        </p>
+                        <p class="card-text">
+                            Comments - <%= User.YoutubeD.yDComment %>
+                        </p>
+                        <hr>
+                        <p class="progress-title">Total = <%= User.YoutubeD.yDVideoViral + User.YoutubeD.yDComment  %> </p>                  
+                        </div>
+                    </li>
+              <%}%>
+              <% if(User.FacebookD.iS) {%>
+                <li class="project-item">
+                    <div class="card project-card">   
+                    <h3 class="card-title " >
+                        Facebook Department Sewa
+                    </h3>             
+                    <p class="card-text">
+                        Post - <%= User.FacebookD.fDpost %>
+                    </p>
+                    <p class="card-text">
+                        Storie - <%= User.FacebookD.fDStory %>
+                    </p>
+                    <p class="card-text">
+                        Comments - <%= User.FacebookD.fDComment %>
+                    </p>
+                    <hr>
+                    <p class="progress-title">Total = <%= User.FacebookD.fDpost + User.FacebookD.fDStory + User.FacebookD.fDComment %> </p>                  
+                    </div>
+                </li>
+          <%}%>
+          <% if(User.InstagramD.iS) {%>
+            <li class="project-item">
+                <div class="card project-card">   
+                <h3 class="card-title " >
+                    Instagram Department Sewa
+                </h3>             
+                <p class="card-text">
+                    Post - <%= User.InstagramD.iDPost %>
+                </p>
+                <p class="card-text">
+                    Storie - <%= User.InstagramD.iDStory %>
+                </p>
+                <p class="card-text">
+                    Comments - <%= User.InstagramD.iDComment %>
+                </p>
+                <hr>
+                <p class="progress-title">Total = <%= User.InstagramD.iDPost + User.InstagramD.iDStory + User.InstagramD.iDComment %> </p>                  
+                </div>
+            </li>
+            <%}%>
+        
+      <% if(User.TwitterD.iS) {%>
+        <li class="project-item">
+            <div class="card project-card">   
+            <h3 class="card-title " >
+                Twitter Department Sewa
+            </h3>             
+            <p class="card-text">
+                Tweet - <%= User.TwitterD.tDTweet %>
+            </p>
+            <p class="card-text">
+                Reply - <%= User.TwitterD.tDReply %>
+            </p>
+            <hr>
+            <p class="progress-title">Total = <%= User.TwitterD.tDTweet + User.TwitterD.tDReply  %> </p>                  
+            </div>
+        </li>
+  <%}%>
+
+<%}%>
+        </ul>
+
+      </section>
+
+
+
+      
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+
+      <p class="copyright">
+        &copy; 2022 Trivendra. All Rights Reserved
+      </p>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/js/single.js"></script>
+
+</body>
+
+</html>

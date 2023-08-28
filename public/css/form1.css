@@ -1,0 +1,316 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(56, 54, 54);
+    border-radius: 10px;
+  }
+
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #2961fc7d; */
+    background: linear-gradient(to top left, #3ed8ff, #a8f5ff);
+}
+
+.red{
+  border: 2px solid red;
+}
+
+.green{
+  border-color: green;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+.container{
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 15px;
+    margin:  5% 10px;
+    /* background-color: #fff; */
+    background: linear-gradient(to top left, #ffffffff, #ffffff33);
+    /* backdrop-filter: blur(10px); */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.container header{
+    position: relative;
+    /* font-family: 'Rozha One', serif; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 84px;
+    border-radius: 8px;
+    background-color: #4070f4;
+}
+.container form{
+    position: relative;
+    margin-top: 10px;
+    min-height: 490px;
+    /* background-color: #fff; */
+    /* background: linear-gradient(to top left, #ffffffff, #ffffff33); */
+    /* backdrop-filter: blur(8px); */
+    overflow: auto;
+}
+.container form .form{
+    position: absolute;
+    /* background-color: #fff; */
+    /* background: linear-gradient(to top left, #ffffffff, #ffffff33); */
+    /* backdrop-filter: blur(8px); */
+    transition: 0.3s ease;
+}
+
+.container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* background-color: #265df2; */
+    background: linear-gradient(to top left, #ffffffff, #ffffff33);
+    border: 2px solid royalblue;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
+#bmain{
+    display: none;    
+}
+#dmain{
+    display: none;    
+}
+.container form .sewadetails{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    background: linear-gradient(to top left, #ffffffff, #ffffff33);
+    padding: 0px 10px;
+    margin: 5px 0px;
+    border: 2px solid royalblue;
+}
+
+.sewa{
+  display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+    
+}
+form .sewadetails .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+form .fields .detail{
+  display: flex;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+form .fields .details{
+  /* display: flex; */
+  width: calc(100% / 3 - 15px);
+  /* flex-direction: column; */
+  margin: 4px 0;
+}
+
+.details input[type="checkbox"]{
+  /* width: 22px;
+  height: 20px; */
+  
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+input{
+    background: linear-gradient(to top left, #ffffffff, #ffffff33);
+
+}
+
+.details label{
+  font-size: 15px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+#bookSewaMessage {
+    border: 2px solid #dc3545;
+    margin-top: 20px;
+    padding:2px 6px;
+    border-radius: 6px;
+  }
+#bookSewaMessage span{
+    font-size: 15px;
+    font-weight: 500;
+    color: #2e2e2e;
+    color: #dc3545;
+  }
+
+
+.det{
+  display: none;
+}
+
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field select,
+.input-field input[type="date"]{
+    color: #707070;
+}
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+.container form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 100px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.container form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+}
+form button:hover{
+    background-color: #265df2;
+}
+form button i,
+form .backBtn i{
+    margin: 0 6px;
+}
+form .backBtn i{
+    transform: rotate(180deg);
+}
+form .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form .buttons button , .backBtn{
+    margin-right: 14px;
+}
+
+
+
+@media (max-width: 750px) {
+    .container form{
+        overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+    form .sewadetails .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+   
+    form .fields .detail{
+        width: calc(100% / 2 - 15px);
+    }
+    form .fields .details{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+    form .sewadetails .input-field{
+        width: 100%;
+    }
+    form .fields .detail{
+        width: 100%;
+    }
+    form .fields .details{
+        width: 100%;
+    }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/css/report1.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa Report</title>
+</head>
+<body>
+    
+        <section class="main">
+            <div class="main-top">
+                <h1>सेवा रिपोर्ट</h1>
+            </div>
+            <div class="selector">
+                <div class="input">
+
+                    <label for="sam">संभाग</label>
+                     <select name="Sambhag" id="sam" onchange="getDist(this)">
+                         <option disabled selected >अपना संभाग चुने</option>
+                     </select>
+                </div>
+                <div class="input">
+
+                    <label for="dist">जिला</label>
+                     <select name="District" id="dist" onchange="getBlock(this)">
+                         <option disabled selected >अपना जिला चुने</option>
+                     </select>
+                </div>
+                <div class="input">
+
+                    <label for="block">ब्लॉक</label>
+                     <select name="Block" id="block" onchange="getData(this)">
+                         <option disabled selected >अपना ब्लॉक चुने</option>
+                     </select>
+                </div>
+
+            </div>
+
+            <section class="attendance"  id="Alist">
+                <div class="attendance-list">
+                    <div class="ahead">
+                        <h1>जिला- <b id="DistHead">Dhamtari</b></h1> <h1>ब्लॉक- <b id="BlockHead">Kurud</b></h1> <h1>दिनांक- <b id="date">20-12-2022</b></h1>
+                    </div>
+                    <div class="dmem">
+                        <b >जिला ग्रुप मेंबर</b>
+                        <b id="totalD" class="atDiv" ></b>
+                        <b id="presentD" class="atDiv"></b>
+                    </div>
+                    <div class="tab">
+                        <table class="table pD">
+                            
+                            <thead>
+                                <tr>
+                                    <th class="first">Sno</th>
+                                    <th class="sec">नाम</th>
+                                    <th class="third">क्या क्या सेवा किये ?</th>
+                                    <th class="four">सत्संत सुने ?</th>
+                                    <th class="fifth">टोटल सेवा</th>
+                                    <th class="six">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody id="disttable"></tbody>
+
+                        </table>
+                    </div>
+                    <div class="dmem">
+                        <b >ब्लॉक ग्रुप मेंबर</b>
+                        <b id="totalB" class="atDiv"></b>
+                        <b id="presentB" class="atDiv"></b>
+                    </div>
+                    <div class="tab">
+                        <table class="table pB">
+                            
+                            <thead>
+                                <tr>
+                                    <th class="first">Sno</th>
+                                    <th class="sec">नाम</th>
+                                    <th class="third">क्या क्या सेवा किये ?</th>
+                                    <th class="four">सत्संत सुने ?</th>
+                                    <th class="fifth">टोटल सेवा</th>
+                                    <th class="six">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody id="blockTable"></tbody>
+
+                        </table>
+                    </div>
+                    <div class="absentdiv">
+
+                    <div class="tabSection">
+
+                    
+                    <div class="dmem">
+                        <b >जिला ग्रुप अबसेंट मेंबर</b>
+                        <b id="AbsD" class="atDiv"></b>
+                    </div>
+                    <div class="tab">
+                        <table class="table AbsD">
+                            
+                            <thead>
+                                <tr>
+                                    <th class="first">Sno</th>
+                                    <th class="sec">नाम</th>
+                                    <th class="sec">एरिया सेवादार</th>
+                                    <th class="sec">गांव</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="absDTable"></tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="tabSection">
+                    <div class="dmem">
+                        <b >ब्लॉक ग्रुप अबसेंट मेंबर</b>
+                        <b id="AbsB" class="atDiv"></b>
+
+                    </div>
+                    <div class="tab">
+                        <table class="table absB">
+                            
+                            <thead>
+                                <tr>
+                                    <th class="first">Sno</th>
+                                    <th class="sec">नाम</th>
+                                    <th class="sec">एरिया सेवादार</th>
+                                    <th class="sec">गांव</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="absBTable"></tbody>
+
+
+                        </table>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </section>
+        <div class="foot">
+           <h4>
+            © Trivendra  2022, All Rights Reserved
+           </h4> 
+        </div>
+        <script src="/js/report1.js"></script>
+        
+    </body>
+
+</html>

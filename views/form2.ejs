@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Sewa Form </title>
+</head>
+
+<body>
+    <div class="container">
+        <header>सेवा फार्म</header>
+     <span class="title">परमात्मा की दया से आपका फॉर्म सबमिट हो गया |</span>
+
+     <% if(sewa.s) {%>
+     <span class="title"><%= sewa.m %></span>
+
+     <% }%>
+
+        <div> 
+            <a href="/form"> Submit Another</a>
+        </div>
+        
+    </div>
+
+    <script src="/js/form1.js"></script>
+</body>
+
+</html>

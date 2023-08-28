@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/addmember.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Member</title>
+</head>
+<body>
+    <div class="container pt-2 border mt-3 rounded" >
+        <div class="d-flex w-100 justify-content-center ">
+            <h5>Add member</h5>
+        </div>
+        <form class="pt-3 " >
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="name">नाम </label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="नाम हिंदी में  लिखे" >
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="mobile">मोबाईल नंबर </label>
+                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="मोबाईल नंबर के सामने 0 या +91 न लगाए" >
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="sambhag">संभाग </label>
+                <select class="form-select" aria-label="Default select example" id="sambhag" name="sambhag" onchange="getDist(this)">
+                    <option value="ब्लॉक ग्रुप" selected disabled>अपना संभाग चुने</option>
+                  </select>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="jila">जिला </label>
+                <select class="form-select" aria-label="Default select example" id="jila" name="dist" onchange="getBlock(this)">
+                    <option value="ब्लॉक ग्रुप" selected disabled>अपना जिला चुने</option>
+                  </select>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="block">ब्लॉक </label>
+                <select class="form-select" aria-label="Default select example" id="block" name="block" onchange="getAreaSewadar(this)">
+                    <option value="ब्लॉक ग्रुप" selected disabled>अपना ब्लॉक चुने</option>
+                  </select>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="gaon">गांव</label>
+                <input type="text" class="form-control" id="gaon" placeholder="गांव का नाम लिखे" name="gaon">
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="gender">Gender </label>
+                <select class="form-select" aria-label="Default select example" id="gender" name="gender">
+                    <option value="Male" selected>Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="member">कौन से ग्रुप के मेंबर है ?</label>
+                <select class="form-select" aria-label="Default select example" id="member" name="groupmember">
+                    <option value="ब्लॉक ग्रुप" selected>ब्लॉक ग्रुप</option>
+                    <option value="जिला ग्रुप">जिला ग्रुप</option>
+                  </select>
+            </div>
+            
+            <div class="input-group mb-3 row ">
+                <div class="col">
+                    <label class="input-group-text" for="dptNo">डिपार्टमेंट सेवा करते हैं ?</label>
+        
+                </div>
+                <div class="col border rounded" >
+                    <div class="row mx-3 pt-2 d-flex justify-content-evenly w-100 ">
+                        <div class="col-6 form-check">
+                            <input class="form-check-input" type="radio" name="deptSewa" id="dptNo" checked>
+                            <label class="form-check-label" for="dptNo">
+                                नहीं
+                            </label>
+                        </div>
+                        <div class="col-6 form-check">
+                            <input class="form-check-input" type="radio" name="deptSewa" id="dptYes">
+                            <label class="form-check-label" for="dptYes">
+                                हाँ 
+                            </label>
+                        </div>
+                        
+        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="input-group mb-3 row ">
+                <div class="col">
+                    <label class="input-group-text" for="trendTYes">क्या आप ट्रेंड टीम मेंबर हैं ?</label>
+        
+                </div>
+                <div class="col border rounded" >
+                    <div class="row mx-3 pt-2 d-flex justify-content-evenly w-100 ">
+                        <div class="col-6 form-check">
+                            <input class="form-check-input" type="radio" name="trendMember" id="trendTNo" checked data-bs-toggle="collapse" data-bs-target="#trendTeam" aria-expanded="false" aria-controls="collapseExample">
+                            <label class="form-check-label" for="trendTNo">
+                                नहीं
+                            </label>
+                        </div>
+                        <div class="col-6 form-check">
+                            <input class="form-check-input" type="radio" name="trendMember" id="trendTYes" data-bs-toggle="collapse" data-bs-target="#trendTeam" aria-expanded="false" aria-controls="collapseExample">
+                            
+                                <label class="form-check-label" for="trendTYes" >
+                                    हाँ 
+                                </label>
+                             
+                            
+                        </div>
+                        
+                    
+        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="collapse mb-3" id="trendTeamDiv">
+                <div class="card card-body">
+                    <div class="input-group mb-3 ">
+                        <label class="input-group-text" for="areaSC">कौन से टीम के मेंबर हैं ?</label>
+                        <select class="form-select" aria-label="Default select example" id="teamname" name="teamname">
+                            <option value="Training Group" >Training Group</option>
+                            <option value="Jila Trend Team" >Jila Trend Team</option>
+                            <option value="CG Speacial Trend Team" >CG Speacial Trend Team</option>
+                          </select>
+                    </div>
+                </div>
+              </div>
+
+            <div class="input-group mb-3 row ">
+                <div class="col">
+                    <label class="input-group-text" for="isSNo">क्या आप एरिया सेवादार हैं ?</label>
+        
+                </div>
+                <div class="col border rounded" >
+                    <div class="row mx-3 pt-2 d-flex justify-content-evenly w-100 ">
+                        <div class="col-6 form-check">
+                            <input class="form-check-input" type="radio" name="isSewadar" id="isSNo" checked data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <label class="form-check-label" for="isSNo">
+                                नहीं
+                            </label>
+                        </div>
+                        <div class="col-6 form-check">
+                            <input class="form-check-input" type="radio" name="isSewadar" id="isSYes" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            
+                                <label class="form-check-label" for="isSYes" >
+                                    हाँ 
+                                </label>
+                             
+                            
+                        </div>
+                        
+                    
+        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="collapse mb-3" id="areasewaCount">
+                <div class="card card-body">
+                    <div class="input-group mb-3 ">
+                        <label class="input-group-text" for="areaSC">कौन से नंबर के एरिया सेवादार हैं ?</label>
+                        <select class="form-select" aria-label="Default select example" id="areaSC" name="areaSCount" onchange="areSewadarnumber(this)">
+                            <option selected disabled>Select</option>
+                            <option value=1 >1</option>
+                            <option value=2 >2</option>
+                            <option value=3 >3</option>
+                            <option value=4 >4</option>
+                            <option value=5 >5</option>
+                            <option value=6 >6</option>
+                            <option value=7 >7</option>
+                            <option value=8 >8</option>
+                            <option value=9 >9</option>
+                            <option value=10 >10</option>
+                          </select>
+                    </div>
+                </div>
+              </div>
+            
+              <div class="input-group mb-3 " id="areaSDiv">
+                <label class="input-group-text" for="areaS">आपके एरिया सेवादार का नाम</label>
+                <select class="form-select" aria-label="Default select example" id="areaSname" name="areaSname" onchange="show(this)">
+                    <option selected disabled >अपने एरिया सेवादार का नाम चुने</option>
+                   
+                  </select>
+            </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            
+          </form>
+
+          
+    </div>
+    <script src="/js/addformjs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
