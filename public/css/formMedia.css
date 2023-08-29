@@ -1,0 +1,59 @@
+@media (max-width: 750px) {
+    .container form{
+        overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+    form .sewadetails .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+   
+    form .fields .detail{
+        width: calc(100% - 15px);
+    }
+    form .fields .details{
+        width: calc(100% - 15px);
+    }
+    *{
+        --my-inputLable:13px;
+        --my-formTitle:16px;
+        --my-detailLable:13px;
+        --my-inputText:13px;
+        --my-warnMsg:11px;
+        --my-msgLable:11px;
+        --my-bHight:35px;
+        --my-bWeight:80px;
+        --my-btnText:12px;
+    }
+}
+
+@media (max-width: 550px) {
+    *{
+        --my-inputLable:13px;
+        --my-formTitle:14px;
+        --my-detailLable:13px;
+        --my-inputText:13px;
+        --my-warnMsg:11px;
+        --my-msgLable:11px;
+        --my-bHight:35px;
+        --my-bWeight:80px;
+        --my-btnText:12px;
+    }
+
+    form .fields .input-field{
+        width: 100%;
+    }
+    form .sewadetails .input-field{
+        width: 100%;
+    }
+    form .fields .detail{
+        width: 100%;
+    }
+    form .fields .details{
+        width: 100%;
+    }
+}
