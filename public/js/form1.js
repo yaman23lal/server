@@ -43,7 +43,7 @@ async function getM(number){
     if (mobile.length==10) {
         
         const reqst = new XMLHttpRequest();
-        reqst.open("POST", "http://localhost:3000/getmember");
+        reqst.open("POST", "/getmember");
         reqst.setRequestHeader("content-type", "application/json")
         reqst.send(JSON.stringify({ Mobile: mobile}));
     
@@ -158,17 +158,43 @@ function myFunction(checkBox){
 function checkForm() {
     // const submit= true;
     let f;
+    let b =true;
     let s;
     const sewaplatform= document.getElementById("sewaplatform")
     const satsangplatform= document.getElementById("satsangplt")
     const sewaDiv= document.getElementById("sewaDiv")
+    const BookSewaYes= document.getElementById("BY")
     const satsangDiv= document.getElementById("satsangDiv")
     const massage1=sewaDiv.lastElementChild;
     const massage2=satsangDiv.lastElementChild;
     let checkboxsewa=sewaplatform.querySelectorAll('input[type="checkbox"]');
     let checkboxsatsang=satsangplatform.querySelectorAll('input[type="checkbox"]');
+        
+        if (BookSewaYes.value=="true") {
+            const booksewaDiv= document.getElementById("booksewa")
+            let bInput= booksewaDiv.querySelectorAll("input");
+            let bookSewaWarn= document.getElementById("bookSewaWarn")
+            let elment;
 
-   
+            for (let i = 0; i < bInput.length; i++) {
+                if (!bInput[i].value) {
+                    elment=bInput[i];
+                    b=false;
+                    break;
+                }
+            }
+            if (!b) {
+                bookSewaWarn.innerHTML=`<label  class="text-danger">कोई भी फील्ड खाली न छोड़े</label>`;
+                booksewaDiv.setAttribute("class","fields border border-danger border-2")
+                elment.focus();
+            }
+            else{
+                booksewaDiv.setAttribute("class","fields");
+                bookSewaWarn.innerHTML='';
+            }
+        }
+
+
             let sewa_checkboxes = [];
             
              checkboxsewa.forEach((check_box,index) => { 
@@ -219,7 +245,7 @@ function checkForm() {
                 s=true;
             }
             
-            if (f&&s) {
+            if (f&&s&&b) {
                 return true;
             }
            
