@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/form1.css">
+    <link rel="stylesheet" href="/css/formMedia.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -27,30 +28,29 @@
 
                 <div class="fields">
                     <div class="input-field" id="mobile">
-                        <label for="number">मोबाइल नंबर</label>
+                        <label class="personalinfo" for="number">मोबाइल नंबर</label>
                         <input type="tel" name="Mobnumber" id="number" oninput="getM(this)"
                             placeholder="Enter mobile number" maxlength="10" required>
-
                     </div>
                     <div class="input-field">
-                        <label for="fullname">आपका नाम</label>
-                        <input type="text" name="Name" id="fullname" placeholder="Enter your name" required>
-                    </div>
-
-                    <div class="input-field">
-                        <label for="District">जिला</label>
-                        <input type="text" name="Dist" id="District" placeholder="Enter District" required>
+                        <label class="personalinfo" for="fullname">आपका नाम</label>
+                        <input type="text" name="Name" id="fullname" placeholder="Enter your name" required disabled>
                     </div>
 
                     <div class="input-field">
-                        <label for="Block">ब्लॉक</label>
-                        <input type="text" name="Block" id="Block" placeholder="Enter your Block" required>
+                        <label class="personalinfo" for="District">जिला</label>
+                        <input type="text" name="Dist" id="District" placeholder="Enter District" required disabled>
+                    </div>
+
+                    <div class="input-field">
+                        <label class="personalinfo" for="Block">ब्लॉक</label>
+                        <input type="text" name="Block" id="Block" placeholder="Enter your Block" required disabled>
                     </div>
 
 
 
                     <div class="input-field">
-                        <label for="gender">Gender</label>
+                        <label class="personalinfo" for="gender">Gender</label>
                         <select id="gender" name="gender" required>
                             <option disabled selected>Select gender</option>
                             <option value="Male">Male</option>
@@ -60,12 +60,12 @@
                     </div>
 
                     <div class="input-field">
-                        <label for="Group">आप किस ग्रुप के सदस्य हैं ?</label>
-                        <input type="text" name="Group" id="Group" placeholder="Enter your Group" required>
+                        <label class="personalinfo" for="Group">आप किस ग्रुप के सदस्य हैं ?</label>
+                        <input type="text" name="Group" id="Group" placeholder="Enter your Group" required disabled>
                     </div>
                     <div class="input-field" id="team" style="display: none;">
-                        <label for="Team">आप कौन से टीम के सदस्य हैं ?</label>
-                        <input type="text" name="Team" id="Team" placeholder="Enter your Team">
+                        <label class="personalinfo" for="Team">आप कौन से टीम के सदस्य हैं ?</label>
+                        <input type="text" name="Team" id="Team" placeholder="Enter your Team" disabled>
 
                     </div>
                 </div>
@@ -85,8 +85,7 @@
                         <label for="insta">इंस्टाग्राम सेवा</label>
                     </div>
                     <div class="details">
-                        <input type="checkbox" name="TwitterSewa" id="twitter" onclick="myFunction(this)"
-                            value=true>
+                        <input type="checkbox" name="TwitterSewa" id="twitter" onclick="myFunction(this)" value=true>
                         <label for="twitter">Twitter सेवा</label>
                     </div>
                     <div class="details">
@@ -95,13 +94,11 @@
                         <label for="DailyHunt">डेलीहंट सेवा</label>
                     </div>
                     <div class="details">
-                        <input type="checkbox" name="YouTubeSewa" id="YouTube" onclick="myFunction(this)"
-                            value=true>
+                        <input type="checkbox" name="YouTubeSewa" id="YouTube" onclick="myFunction(this)" value=true>
                         <label for="YouTube">यूट्यूब सेवा</label>
                     </div>
                     <div class="details">
-                        <input type="checkbox" name="PintrestSewa" id="Pintrest" onclick="myFunction(this)"
-                            value=true>
+                        <input type="checkbox" name="PintrestSewa" id="Pintrest" onclick="myFunction(this)" value=true>
                         <label for="Pintrest">पिंटरेस्ट सेवा</label>
                     </div>
                     <div class="details">
@@ -129,7 +126,7 @@
 
                 </div>
 
-                <div class="input-field" id="massagesewa">
+                <div class="input-field" id="massagesewa" style="margin: 10px 5px;">
 
                 </div>
 
@@ -254,16 +251,19 @@
 
                 <div class="fields" id="bookdivYN">
                     <div class="details">
-                        <input type="radio" name="BookSewa" id="BY" onclick="bookSewa(this)" value="true">
+                        <input type="radio" name="BookSewa" class="BookSewaY" id="BY" onclick="bookSewa(this)"
+                            value="true">
                         <label for="BY">हाँ</label><br>
-                        <input type="radio" name="BookSewa" id="BN" onclick="bookSewa(this)" value="false">
+                        <input type="radio" name="BookSewa" class="BookSewaY" id="BN" onclick="bookSewa(this)"
+                            value="false">
                         <label for="BN">नहीं</label><br>
 
                     </div>
                 </div>
             </div>
             <div id="bookSewaMessage" style="display: none;">
-                <span class="title" id="platform">आज आप बुक सेवा फॉर्म डालने  के लिए लेट हो गए, कृपया 9 बजे के पहले फॉर्म डालें |</span>
+                <span class="title" id="platform">आज आप बुक सेवा फॉर्म डालने के लिए लेट हो गए, कृपया 9 बजे के पहले फॉर्म
+                    डालें |</span>
             </div>
 
             <div class="details address " id="bmain">
@@ -274,11 +274,11 @@
 
                     <div class="input-field">
                         <label>बुक आर्डर इवेंट</label>
-                        <input type="tel" name="fbBookevent" placeholder="इवेंट" maxlength="2">
+                        <input type="tel" name="fbBookevent" placeholder="इवेंट" maxlength="3">
                     </div>
                     <div class="input-field">
                         <label>बुक आर्डर पोस्ट</label>
-                        <input type="tel" name="fbBookpost" placeholder="पोस्ट" maxlength="2">
+                        <input type="tel" name="fbBookpost" placeholder="पोस्ट" maxlength="3">
                     </div>
 
                     <div class="input-field">
@@ -290,6 +290,9 @@
                         <input type="tel" name="InterNationalbook" placeholder="इंटरनेशनल आर्डर" maxlength="3">
                     </div>
                 </div>
+                <div class="input-field" id="bookSewaWarn" style="margin: 10px 5px;">
+
+                </div>
             </div>
             <hr>
 
@@ -297,7 +300,8 @@
             <div class="details Satasangshare" id="satsangDiv">
                 <span class="title">लाइव सत्संग सेवा</span>
                 <div style="margin-bottom: 4px;" class="input-field">
-                    <label>आपने जिस समय <b>लाइव सत्संग</b> शेयर करने की सेवा की है ,उन समयों पर Tick लगाएं | रोज कम
+                    <label class="lableMsg">आपने जिस समय <b>लाइव सत्संग</b> शेयर करने की सेवा की है ,उन समयों पर Tick
+                        लगाएं | रोज कम
                         से कम <b>दो समय</b> यह सेवा करना <b>अनिवार्य</b> हैं जी |
                     </label>
 
@@ -342,7 +346,7 @@
                         <label for="no">आज यह सेवा नहीं कर पाएं |</label>
                     </div>
                 </div>
-                <div class="input-field" id="massagesatsang">
+                <div class="warn-msg" id="massagesatsang" style="margin: 10px 5px;">
 
                 </div>
 
@@ -361,8 +365,8 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
             <div class="dept" id="dmain">
                 <hr>
                 <span class="title">डिपार्टमेंट सेवा</span>
@@ -388,7 +392,7 @@
                 </div>
             </div>
 
-            
+
 
             <div class="details departmensewa " id="dsewa">
                 <!-- <span class="title">डिपार्टमेंट सेवा जानकारी </span> -->
@@ -491,11 +495,7 @@
                     <span class="btnText">Submit</span>
                 </button>
             </div>
-    </div>
-    </div>
-    <!-- </div> -->
-
-    </form>
+        </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
