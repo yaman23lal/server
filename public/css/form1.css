@@ -5,7 +5,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    --my-inputLable:15px;
+    --my-formTitle:18px;
+    --my-detailLable:15px;
+    --my-inputText:14px;
+    --my-warnMsg:12px;
+    --my-msgLable:14px;
+    --my-bHight:45px;
+    --my-bWeight:100px;
+    --my-btnText:15px;
 }
+
+
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -100,7 +112,7 @@ input[type=number]{
 .container form .title{
     display: block;
     margin-bottom: 8px;
-    font-size: 18px;
+    font-size: var(--my-formTitle);
     font-weight: 500;
     margin: 6px 0;
     color: #333;
@@ -113,10 +125,13 @@ input[type=number]{
     flex-wrap: wrap;
     /* background-color: #265df2; */
     background: linear-gradient(to top left, #ffffffff, #ffffff33);
-    border: 2px solid royalblue;
-    border-radius: 5px;
+    /* border: 2px solid royalblue; */
+    border-radius: 8px;
     padding: 0px 10px;
+    border: 1px solid rgb(162, 185, 252);
+
 }
+
 
 #bmain{
     display: none;    
@@ -131,9 +146,10 @@ input[type=number]{
     /* flex-direction: column; */
     flex-wrap: wrap;
     background: linear-gradient(to top left, #ffffffff, #ffffff33);
-    padding: 0px 10px;
-    margin: 5px 0px;
-    border: 2px solid royalblue;
+    padding: 5px 10px;
+    margin: 13px 0px;
+    border-radius: 8px;
+    border: 1px solid rgb(162, 185, 252);
 }
 
 .sewa{
@@ -182,13 +198,18 @@ form .fields .details{
   top: -1px;
 }
 
+input[type="radio"] {
+    margin-top: -1px;
+    vertical-align: middle;
+  }
+
 input{
     background: linear-gradient(to top left, #ffffffff, #ffffff33);
 
 }
 
 .details label{
-  font-size: 15px;
+  font-size: var(--my-detailLable);
   font-weight: 500;
   color: #2e2e2e;
 }
@@ -211,13 +232,13 @@ input{
 }
 
 .input-field label{
-    font-size: 12px;
+    font-size: var(--my-inputLable);
     font-weight: 500;
     color: #2e2e2e;
 }
-.input-field input, select{
+.input-field input,.input-field select{
     outline: none;
-    font-size: 14px;
+    font-size: var(--my-inputText);
     font-weight: 400;
     color: #333;
     border-radius: 5px;
@@ -241,8 +262,8 @@ input{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
-    max-width: 100px;
+    height: var(--my-bHight);
+    max-width: var(--my-bWeight);
     width: 100%;
     border: none;
     outline: none;
@@ -254,63 +275,25 @@ input{
     cursor: pointer;
 }
 .container form .btnText{
-    font-size: 14px;
+    font-size: var(--my-btnText);
     font-weight: 400;
 }
 form button:hover{
     background-color: #265df2;
 }
-form button i,
-form .backBtn i{
-    margin: 0 6px;
-}
-form .backBtn i{
-    transform: rotate(180deg);
-}
+
 form .buttons{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-form .buttons button , .backBtn{
-    margin-right: 14px;
+
+.text-danger{
+    font-size: var(--my-warnMsg) !important;
 }
 
+.lableMsg{
+    font-size: var(--my-msgLable) !important;
 
-
-@media (max-width: 750px) {
-    .container form{
-        overflow-y: scroll;
-    }
-    .container form::-webkit-scrollbar{
-       display: none;
-    }
-    form .fields .input-field{
-        width: calc(100% / 2 - 15px);
-    }
-    form .sewadetails .input-field{
-        width: calc(100% / 2 - 15px);
-    }
-   
-    form .fields .detail{
-        width: calc(100% / 2 - 15px);
-    }
-    form .fields .details{
-        width: calc(100% / 2 - 15px);
-    }
 }
 
-@media (max-width: 550px) {
-    form .fields .input-field{
-        width: 100%;
-    }
-    form .sewadetails .input-field{
-        width: 100%;
-    }
-    form .fields .detail{
-        width: 100%;
-    }
-    form .fields .details{
-        width: 100%;
-    }
-}
